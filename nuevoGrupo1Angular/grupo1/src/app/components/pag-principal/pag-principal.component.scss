@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+      padding: 0;
+      background: url(../../../assets/images/sis2.jpg) no-repeat center top;
+      background-size: cover;
+      font-family: sans-serif;
+      height: 100vh;
+  }
+  h1{
+      margin: 0;
+      padding: 80px 70px 200px;
+      text-align:center;
+      font-size: 50px;
+      color:rgb(255, 255, 255);
+      top:25%;
+      left: 25.8%;
+      width: 500px;
+      position: absolute;
+
+
+  }
+  *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      border: none;
+      outline: none;
+  }

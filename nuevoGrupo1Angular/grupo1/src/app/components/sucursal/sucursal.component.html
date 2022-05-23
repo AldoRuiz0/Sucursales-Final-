@@ -1,0 +1,90 @@
+<router-outlet></router-outlet>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<body>
+  <header>
+    <h1>{{sucursalModelGetId.nombre}} <br> <span>[ {{sucursalModelGetId.direccion}} ]</span></h1>
+</header>
+
+<div class="container-search">
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar">
+        <input class="search_input" type="text" name="" placeholder="Search...">
+        <a href="/sadasd" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="container">
+
+    <div class="container-cards">
+      <div>{{sucursalModelGetId.nombre}}</div>
+
+      <div class="card"  *ngFor="let suc of productosModelGet" style="width: 18rem;">
+
+
+
+        <div class="card-body center">
+          <h5 class="card-title">{{suc.nombreProducto}}</h5>
+          <p class="card-text">Tiene un stock de: {{suc.stock}}</p>
+          <p class="card-text">TIene un precio de: {{suc.precioProducto}}</p>
+          <a  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal" (click)="getProdId(suc._id)">Vender</a>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="cajaa">
+      <div class="modal fade" id="agregarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog">
+
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" >Agregar producto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+              <form>
+
+                <div class="mg-3">
+                  <label for="imputNombre" class="form-label"> Nombre del producto</label>
+                  <input type="text" id="imputNombreNombreProducto" class="form-control" name="nombreProducto" #nombreProducto="ngModel"
+                  [(ngModel)]="productosModelGetId.nombre" disabled="true">
+                </div>
+                <div class="mg-3">
+                  <label for="imputDireccion" class="form-label" > Precio del producto</label>
+                  <input type="text" id="imputPrecioProducto" class="form-control"  name="precioProducto" #precioProducto="ngModel"
+                  [(ngModel)]="productosModelGetId.precio" disabled="true">
+                </div>
+                <div class="mg-3">
+                  <label for="imputDescripcion" class="form-label"> Stock</label>
+                  <input type="number" id="imputStock" class="form-control"  name="stock"
+                  #stock="ngModel" [(ngModel)]="productosModelGetId.cantidad">
+                </div>
+
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="venderProducto()" >Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
