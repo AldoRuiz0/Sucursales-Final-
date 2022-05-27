@@ -4,7 +4,7 @@ export class Usuario {
     public _id: String,
     public nombre: String,
     public email: String,
-    public contraseña: String,
+    public password: String,
     public rol: String
   ){}
 }

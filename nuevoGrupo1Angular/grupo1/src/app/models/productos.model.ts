@@ -1,5 +1,5 @@
 export class Productos {
-  
+
   constructor(
     public _id: String,
     public nombre: String,
@@ -7,8 +7,8 @@ export class Productos {
     public provedores: [{
       idProveedor: String
     }],
-    public cantidad: Number,
-    public precio: Number
+    public precio: Number,
+    public cantidad: Number
   ){}
 
 

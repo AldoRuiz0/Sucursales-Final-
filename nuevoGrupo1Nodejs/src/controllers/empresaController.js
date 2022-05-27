@@ -89,7 +89,7 @@ function conseguirEmpresa(req, res) {
             if (err) return res.status(500)
                 .send({ mensaje: 'Hubo un error en la peticion' })
             if (!empresaEncontradas) return res.status(500)
-                .send({ mensaje: 'no se pudo conseguir la empesa D:' })
+                .send({ mensaje: 'no se pudo conseguir la empresa D:' })
             return res.status(200)
                 .send({ empresa: empresaEncontradas })
         })
